@@ -23,7 +23,7 @@ namespace Recipe_App.Data
 
         public List<Recipe> GetRecipes()
         {
-            return recipes;
+            return recipes; 
         }
 
         public Recipe GetRandomRecipe()

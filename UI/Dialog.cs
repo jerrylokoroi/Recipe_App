@@ -127,7 +127,7 @@ namespace Recipe_App.UI
 
             Console.WriteLine(recipeDetails.ToString());
         }
-         
+          
         private void GetRandomRecipe()
         {
             Recipe randomRecipe = recipeManager.GetRandomRecipe();
