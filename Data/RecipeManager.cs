@@ -107,12 +107,13 @@ namespace Recipe_App.Data
                             }
                         }
 
-                        /*if (currentRecipe != null)
+                        if (currentRecipe != null)
                         {
                             loadedRecipes.Add(currentRecipe);
-                        }*/
+                        }
                     }
                 }
+
             }
             catch (IOException ex)
             {
