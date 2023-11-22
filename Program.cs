@@ -11,7 +11,3 @@ string filePath = @"C:\Data\recipe_data.txt";
 RecipeManager recipeManager = new RecipeManager(filePath);
 Dialog dialog = new Dialog(recipeManager);
 dialog.StartDialog();
-
-
-
-  

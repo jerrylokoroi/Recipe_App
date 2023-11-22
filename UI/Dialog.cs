@@ -41,7 +41,7 @@ namespace Recipe_App.UI
                         break;
 
                     case "4":
-                        recipeManager.SaveRecipesToFile();
+                        /*recipeManager.SaveRecipesToFile();*/
                         Console.WriteLine("Thank you for using Recipe App. Goodbye!");
                         Environment.Exit(0);
                         break;
@@ -88,10 +88,10 @@ namespace Recipe_App.UI
 
                 Recipe newRecipe = new Recipe(name, description, ingredients, stars);
                 recipeManager.AddRecipe(newRecipe);
-
+/*
                 Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine("Recipe added successfully!");
-                Console.ResetColor();
+                Console.ResetColor();*/
             }
             catch (FormatException ex)
             {

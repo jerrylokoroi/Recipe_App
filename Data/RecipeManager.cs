@@ -15,6 +15,7 @@ namespace Recipe_App.Data
             recipes = LoadRecipesFromFile();
         }
 
+
         public void AddRecipe(Recipe recipe)
         {
             recipes.Add(recipe);
@@ -41,7 +42,7 @@ namespace Recipe_App.Data
         {
             try
             {
-                using (StreamWriter writer = new StreamWriter(filePath))
+                using (StreamWriter writer = new StreamWriter(filePath, append: true))
                 {
                     foreach (var recipe in recipes)
                     {
@@ -99,21 +100,17 @@ namespace Recipe_App.Data
                             {
                                 // Skip this line, as we're going to read ingredients in the next iteration.
                             }
-                            else if (line.StartsWith("-"))
+                            else if (line != "")
                             {
-                                string[] parts = line.Split(':');
-                                currentRecipe.Ingredients.Add(new Ingredient { Name = parts[0].Substring(2), Quantity = parts[1].Trim() });
-                            }
-                            else if (line == "")
-                            {
-                                loadedRecipes.Add(currentRecipe);
+                                string[] parts = line.Split(separator: ':');
+                                currentRecipe.Ingredients.Add(new Ingredient { Name = parts[0].Trim(), Quantity = parts[1].Trim() });
                             }
                         }
 
-                        if (currentRecipe != null)
+                        /*if (currentRecipe != null)
                         {
                             loadedRecipes.Add(currentRecipe);
-                        }
+                        }*/
                     }
                 }
             }
@@ -126,6 +123,7 @@ namespace Recipe_App.Data
 
             return loadedRecipes;
         }
+
     }
 }
 
